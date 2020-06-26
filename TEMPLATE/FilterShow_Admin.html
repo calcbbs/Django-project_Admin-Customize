@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    th{
+      border:1px soild black;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <form class="form" method="post">{% csrf_token %}
+    <div class="tableclass">
+    <table border="1" style="border:1px solid green;">
+    <tbody>
+    <tr>
+      <th>Name</th>
+      <th>Email ID</th>
+      <th>Contact No</th>
+      <th>Counsellor_Name</th>
+      <th>Enquiry_Date</th>
+      <th>Source_Name</th>
+      <th>Enquired_For</th>
+      <th>Course_Fee</th>
+      <th>Assigned_To</th>
+      <th>Degree</th>
+      <th>YOP</th>
+      <th>Aggregate</th>
+      <th>Status</th>
+    </tr>
+    {% for field in form %}
+    <tr>
+      <td>
+        {{ field.Name }}
+      </td>
+      <td>
+        {{ field.Email_ID }}
+      </td>
+      <td>
+        {{ field.Contact_No }}
+      </td>
+      <td>
+        {{ field.Counsellor_Name }}
+      </td>
+      <td>
+        {{ field.Enquiry_Date }}
+      </td>
+      <td>
+        {{ field.Source_Name }}
+      </td>
+      <td>
+        {{ field.Enquired_For }}
+      </td>
+      <td>
+        {{ field.Course_Fee }}
+      </td>
+      <td>
+        {{ field.Assigned_To }}
+      </td>
+      <td>
+        {{ field.Degree }}
+      </td>
+      <td>
+        {{ field.YOP }}
+      </td>
+      <td>
+        {{ field.Aggregate }}
+      </td>
+      <td>
+        {{ field.Status }}
+      </td>
+      {% endfor %}
+    </tr>
+    </tbody>
+    </table>
+  </div>
+    <div>
+    <a href="{% url 'AdminDashBoard' %}"><button type="button" style="width:180px;margin:6px;">BACK TO DASHBOARD</button></a>
+    <a href="{% url 'AdminDashBoard' %}"><button type="button" style="width:180px;margin:7px;color:red;">CANCEL</button></a>
+    <div>
+    </form>
+
+  </div>
+</body>
+</html>

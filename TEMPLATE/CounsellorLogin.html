@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+      <title>Counsellor | Login</title>
+      <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <style>
+	     *{font-family: PlayfairDisplay; font-weight: 800;
+		   }
+		 .form{
+		      border: 5px solid grey;
+			    border-opacity: 0.8;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          padding-left : 5px;
+          padding-right: 5px;
+          margin-left: 50px;
+          margin-right: 50px;
+          margin-top:100px;
+          margin-bottom: 100px;
+          height : 240px;
+          width : 780px;
+		  }
+      .tableclass {
+              background-color:rgb(247, 249, 249);
+      }
+
+	  </style>
+</head>
+<body>
+  <center>
+  <div>
+    <form class="form" method="post">{% csrf_token %}
+    <div class="tableclass">
+    <table>
+    {% for field in form %}
+    <tbody>
+    <tr>
+      <td>
+        <label for="{{ field.label }}" style="display:inline-block;vertical-align:middle">{{ field.label_tag }}</label>
+      </td>
+      <td>
+        {{ field }}
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+  </div>
+    <div><a href="{% url 'CounsellorDashBoard' %}"><button type="submit" style="width:180px;margin:6px;">SUBMIT</button></a>
+    <a href="{% url 'CounsellorHome' %}"><button type="button" style="width:180px;margin:7px;color:red;">CANCEL</button></a>
+    <div>
+    </form>
+
+  </div>
+</center>
+</body>
+</html>

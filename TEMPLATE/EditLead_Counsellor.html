@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>TO EDIT BUDGET</h1>
+<form role="form" action="{% url "EditBudget" %}" method="POST">
+  {% csrf_token %}
+  {% for s in data %}
+
+  <p>Branch Name: <input type="text" name="Branch_Name" value="{{s.Branch_Name}}" readonly="readonly"></p>
+  <p>Company Name : <input type="text" name="Company_Name" value="{{s.Company_Name}}" readonly="readonly"></p>
+  <p>Client Name : <input type="text" name="Client_Name" value="{{s.Client_Name}}" readonly="readonly"></p>
+  <p>Contact No : <input type="number" name="Contact_No" value="{{s.Contact_No}}" placeholder="Enter The Contact No : "></p>
+  <p>Email ID : <input type="email" name="Email_ID" value="{{s.Email_ID}}" readonly="readonly"></p>
+  <p>Purpose : <input type="text" value="{{s.Purpose}}" name="Purpose"></p>
+  <p>Total Amount : <input type="number" name="Total_Amount" value="{{s.Total_Amount}}" placeholder="Enter the amount to be paid in total : "></p>
+  <p>Planned Date : <input type="date" name="Planned_Date" value="{{s.Planned_Date}}" placeholder="Enter the payment planned date here...."></p>
+  <p>Payment Mode : <input type="text" value="{{s.Payment_Mode}}" name="Payment_Mode"></p>
+  <p>Pay Purpose : <input type="text" name="Pay_Purpose" value="{{s.Pay_Purpose}}" placeholder="The payment is for : "></p>
+  <p>Description : <textarea type="text" name="Description" placeholder="Enter the description here..."></textarea></p>
+
+  {% endfor %}
+
+  <button type="submit">Submit</button>
+  <ahref="{% url "BudgetHome" %}"><button type="button">Cancel</button></a>
+
+</form>
+</body>
+</html>

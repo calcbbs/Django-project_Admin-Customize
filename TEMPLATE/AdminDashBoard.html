@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+      <title>ADMIN | DASHBOARD</title>
+      <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <style>
+	     *{font-family: PlayfairDisplay; font-weight: 800;
+		   color: white;}
+		 .body
+		 {
+          
+		 }
+      .button1 {
+               background-color: #000000;
+               color: #FFFFFF;
+               padding: 10px;
+               height : 50px;
+               width : 450px;
+      }
+      .buttons {
+                height : 240px;
+                width : 740px;
+                margin-top: 100px;
+                margin-right: 600px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+      }
+	  </style>
+</head>
+<body class="body">
+<div class="logout">
+  <a href="{% url 'Admin' %}"><button style="height:50px;width:150px;float:right;margin-right:30px;" type="button" >LOGOUT</button></a>
+  <p>Total Leads : {{count}}</p>
+</div>
+<center>
+<div class="buttons">
+  <br>
+  <a href="{% url 'AddLeads' %}"><center><button type="button" class="button1">ADD A LEAD</button></center></a><br>
+  <a href="{% url 'TrackLeads' %}"><center><button type="button" class="button1">TRACK ALL LEADS</button></center></a><br>
+  <a href="{% url 'FilterLeads' %}"><center><button type="button" class="button1">FILTER LEADS</button></center></a><br>
+  <a href="{% url 'UpdateLeads' %}"><center><button type="button" class="button1">UPDATE LEADS</button></center></a><br>
+  <a href="{% url 'ViewByCounsellor' %}"><center><button type="button" class="button1">VIEW BY COUNSELLOR NAME</button></center></a><br>
+  <a href="{% url 'FilterByStatus' %}"><center><button type="button" class="button1">FILTER BY STATUS</button></center></a>
+</div>
+</center>
+</body>
+</html>

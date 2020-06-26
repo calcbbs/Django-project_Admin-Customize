@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form role="form" action="{% url "EditLeads" %}" method="POST">
+  {% csrf_token %}
+  {% for s in data %}
+
+  Name: <input type="text" name="Name" value="{{s.Name}}" readonly="readonly"><br>
+  Email_ID : <input type="Email" name="Email_ID" value="{{s.Email_ID}}" readonly="readonly"><br>
+  Contact_No : <input type="number" name="Contact_No" value="{{s.Contact_No}}"> <br>
+  Counsellor_Name : <input type="text" name="Counsellor_Name" value="{{s.Counsellor_Name}}" readonly="readonly"><br>
+  Enquiry_Date : <input type="Date" name="Enquiry_Date" value="{{s.Enquiry_Date}}" ><br>
+  Source_Name : <input type="text" name="Source_Name" value="{{s.Source_Name}}"><br>
+  Enquired_For : <input type="text" name="Enquired_For" value="{{s.Enquired_For}}"><br>
+  Course_Fee : <input type="Number" name="Course_Fee" value="{{s.Course_Fee}}"><br>
+  Assigned_To : <input type="text" name="Assigned_To" value="{{s.Assigned_To}}"><br>
+  Degree : <input type="text" name="Degree" value="{{s.Degree}}"><br>
+  YOP : <input type="Number" name="YOP" value="{{s.YOP}}"><br>
+  Aggregate : <input type="Number" name="Aggregate" value="{{s.Aggregate}}"><br>
+  Status : <input type="text" name="Status" value="{{s.Status}}"><br>
+
+
+  {% endfor %}
+
+  <button type="submit">Submit</button>
+  <ahref="{% url "AdminDashBoard" %}"><button type="button">Cancel</button></a>
+
+</form>
+</body>
+</html>
